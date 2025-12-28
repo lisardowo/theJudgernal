@@ -1,5 +1,5 @@
 
-
+import './clippy.css';
 
 const thumbnails = [
     'computers be like "this shit true asf" and its the number 1', 
@@ -11,9 +11,15 @@ const thumbnails = [
 console.log(thumbnails)
 
 const TuxRenderer = () => {
-    <>
-    <div id = 'tux'><img src= 'src/assets/penguinEyes.webp'></img></div>
+    return (<>
+   
+        <div className="corner-item">
+            <img src= 'src/assets/penguinEyes.webp'></img>
+        </div>
+   
+
     </>
+    );
 }
 
 export default TuxRenderer

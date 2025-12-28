@@ -1,0 +1,9 @@
+
+
+.corner-item {
+    position: absolute;
+    top: 82%;
+    right: 0; /* Positions the item at the top right corner */
+    
+    padding: 5px;
+}

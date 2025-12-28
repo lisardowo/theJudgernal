@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Sigils-Regular';
+  src: url('src/assets/Sigils-Regular.ttf');
+  
+}
+@font-face {
+  font-family: 'Expose';
+  src: url('./assets/Expose-Regular.otf');
+}
+
+html,body,  #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; 
+}

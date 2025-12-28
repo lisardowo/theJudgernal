@@ -1,0 +1,8 @@
+#debugText{
+    z-index: 20;
+    background-color: white;
+    color:rgb(0, 0, 0);
+}
+#tux{
+    z-index: 100;
+}

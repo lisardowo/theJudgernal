@@ -1,0 +1,65 @@
+
+@import './index.css';
+.buttoncontainer{
+   
+    width: 100vw; /* Ocupa todo el ancho de la pantalla */
+    height: 100vh; /* Ocupa todo el alto de la pantalla */
+  }
+.buttons{
+    padding-left: .5%;
+    display: inline-block;
+    margin: 0 100;
+    width: 88px;
+    
+
+
+}
+.text{
+    color: white;
+    font-family: 'HeavyHea';
+    font-size: 20px;
+}
+/* Jumping snippet I stole from the internet*/
+
+.jumping-text {
+  display: flex; 
+  padding-top: 30vh;
+  align-items: center;
+  font-family: 'expose';
+  font-size: 2rem;
+  color: #8879d6;
+}
+
+.jumping-text span {
+  position: relative; 
+  top: 0;
+  animation: jump 0.5s ease infinite alternate; 
+  margin: 0 2px; 
+}
+
+
+.jumping-text span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.jumping-text span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.jumping-text span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.jumping-text span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.jumping-text span:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+
+
+
+
+@keyframes jump {
+  100% {
+    top: -50px; 
+  }
+}

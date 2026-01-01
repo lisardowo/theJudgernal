@@ -7,7 +7,10 @@
   font-family: 'Expose';
   src: url('./assets/Expose-Regular.otf');
 }
-
+@font-face {
+  font-family: 'HeavyHea';
+  src: url('./src/assets/HEAVYHEA.ttf');
+}
 html,body,  #root {
   margin: 0;
   padding: 0;

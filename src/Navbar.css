@@ -8,6 +8,7 @@
 
  
 .penguin {
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,6 +16,7 @@
     height: 40vh; /* Ajusta según lo que necesites */
 }
 .options-container{
+    z-index: 1000;
     display: flex;
     list-style-type: none; 
     padding: 0; 
@@ -22,9 +24,11 @@
     justify-content: center;    
 }
 a{
+    color:purple;
     text-decoration: none;
 }
 .option{
+    z-index: 1000;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -43,15 +47,21 @@ a{
 	
  }
 
- #header {
-	margin-top: 40px;
+ #Navbar {
+    margin-top: 40px;
     margin-left: 30%;
     margin-right: 30%;
     padding-top: 0;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 40%;
+    z-index: 9999; 
+    padding: 8vh; 
 }
 
  .DialogueBox {
-		
+	z-index: 1000;
 	background-color: rgba(0, 0, 0, 0.75);
     border: 3px solid rgb(238, 233, 233);
     padding: 8vh;

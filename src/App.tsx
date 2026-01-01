@@ -3,7 +3,8 @@ import LetterGlitch from './backtround';
 import Home from './Home.tsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import WhatIbring from './WhatIbring/Whatibring.tsx';
-
+import Buttons from './88x31.tsx';
+import Projects from './Projects.tsx';
 
 function App() {
   
@@ -21,6 +22,11 @@ function App() {
       <Routes>
         <Route path = "/" element = {<Home />}/>
         <Route path = "/AboutMe" element = {<WhatIbring />}/>
+        <Route path = "/88x31" element = {<Buttons />}/> 
+        <Route path = "/Blogs" element = {<Home />}/>
+        <Route path = "/Projects" element = {<Projects />}/>
+    
+
       </Routes>
     </Router>
     

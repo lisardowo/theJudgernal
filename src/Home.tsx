@@ -53,13 +53,13 @@ const welcomeDialogue = (dialogueCount:number) =>{
                         <a href='/AboutMe'>What I bring to the table  </a>
                     </li>
                     <li className='option'>
-                       <a href=''> Uhhhm I'm a nerd </a>
+                       <a href='/Projects'> Uhhhm I'm a nerd </a>
                     </li>
                     <li className='option'>
-                       <a href=''> Blogs!!</a>
+                       <a href='/Blogs'> Blogs!!</a>
                     </li>
                     <li className='option'>
-                       <a href=''>  88x31`s</a>
+                       <a href='/88x31'>  88x31`s</a>
                     </li>
                 </ul>
             </>

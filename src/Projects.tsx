@@ -9,13 +9,14 @@ const LinkRepo = ['https://github.com/lisardowo/HABITS.git', 'https://github.com
     ,'https://github.com/lisardowo/HTTPServer.git', 'https://github.com/lisardowo/ShellInC',
 
 ];
+console.log(debugArray);
+     console.log(LinkRepo);
 
 const Projects = () => {
 
 return (
 <>
-     console.log(debugArray);
-     console.log(LinkRepo);
+     
     <Snake/>
     
     <TuxRenderer/>

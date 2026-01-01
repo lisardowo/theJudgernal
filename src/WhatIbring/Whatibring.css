@@ -1,3 +1,128 @@
+:root {
+    --bg-color: #1a1b1e;
+    --card-bg: #2a2b2f;
+    --text-color: #e0e0e0;
+    --accent-pink: #ff79c6;
+    --border-radius: 20px;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(#333 1px, transparent 1px);
+    background-size: 20px 20px; /* Efecto de patrón de fondo */
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--card-bg);
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    border: 1px solid #444;
+}
+
+.nav-item {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--accent-pink);
+}
+
+/* Layout Grid */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
+    gap: 20px;
+}
+
+/* Tarjetas */
+.sidebar-card, .main-content {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border: 1px solid #3d3e42;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.sidebar-card h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Contenido Principal */
+.content-header h1 {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.profile-intro {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.avatar {
+    border-radius: 8px;
+}
+
+.float-right { float: right; margin-left: 15px; border-radius: 10px; }
+.float-left { float: left; margin-right: 15px; border-radius: 10px; }
+
+/* Utilidades */
+.pink-text { color: var(--accent-pink); }
+.highlight { text-decoration: underline; color: #fff; }
+
+.list-pink {
+    list-style: none;
+    padding: 0;
+}
+
+.list-pink li {
+    color: var(--accent-pink);
+    margin-bottom: 8px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.news-list {
+    padding-left: 15px;
+    font-size: 0.9rem;
+}
+
+.video-placeholder {
+    background: #000;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.video-thumb {
+    color: #fff;
+    font-weight: bold;
+}
+
+.webring-controls span {
+    margin-right: 8px;
+}
 #debugText{
     z-index: 20;
     background-color: white;

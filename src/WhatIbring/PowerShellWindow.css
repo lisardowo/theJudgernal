@@ -1,0 +1,189 @@
+:root {
+  --ps-blue: #012456; /* Windows PowerShell console blue */
+  --ps-titlebar: #2b2b2b; /* Windows 10 dark title bar */
+  --ps-titlebar-text: #ffffff;
+  --ps-border: #3d3e42;
+  --ps-shadow: rgba(0,0,0,0.45);
+  --ps-console-text: #d0d0d0; /* Light gray console text */
+  --ps-status-bg: #1f1f1f;
+  --ps-status-text: #bfbfbf;
+}
+
+.ps-window {
+  width: 720px;
+  border: 1px solid var(--ps-border);
+  border-radius: 4px;
+  box-shadow: 0 10px 28px var(--ps-shadow);
+  background: #000; /* frame background behind console */
+  overflow: hidden;
+}
+
+/* Title bar */
+.ps-titlebar {
+  height: 32px;
+  background: var(--ps-titlebar);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px 0 10px;
+  box-sizing: border-box;
+}
+
+.ps-title {
+  color: var(--ps-titlebar-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12.5px;
+  user-select: none;
+}
+
+.ps-caption-buttons {
+  display: flex;
+  align-items: stretch;
+}
+
+.ps-btn {
+  width: 46px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--ps-titlebar-text);
+  font-size: 16px;
+  line-height: 1;
+  cursor: default;
+}
+
+.ps-btn.ps-min:hover,
+.ps-btn.ps-max:hover {
+  background: #3e3e3e;
+}
+
+.ps-btn.ps-close:hover {
+  background: #e81123; /* Windows 10 close hover red */
+}
+
+.ps-btn:active {
+  filter: brightness(0.9);
+}
+
+/* Frame and console */
+.ps-frame {
+  border-top: 1px solid var(--ps-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.ps-console {
+  background: var(--ps-blue);
+  color: var(--ps-console-text);
+  font-family: Consolas, 'Lucida Console', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 22px;
+  min-height: 260px;
+  padding: 12px 14px;
+  overflow-y: auto;
+}
+
+.ps-line {
+  margin: 0;
+  white-space: pre-wrap; /* keep wrapping similar to console */
+}
+
+/* Prompt input */
+.ps-input-row {
+  display: flex;
+  align-items: center;
+}
+
+.ps-prompt {
+  color: #dcdcdc;
+  margin-right: 8px;
+}
+
+.ps-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--ps-console-text);
+  font-family: Consolas, 'Lucida Console', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 22px;
+  caret-color: #ffffff;
+}
+
+.ps-input::selection {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Status bar */
+.ps-status {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-top: 1px solid var(--ps-border);
+  background: var(--ps-status-bg);
+  color: var(--ps-status-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+}
+
+/* Optional container utility */
+.ps-window.full-width {
+  width: 100%;
+}
+
+/* Remove inline-buffer window styles (no longer used) */
+/* .ps-node, .ps-inline-window, .ps-inline-title, .ps-inline-content { } */
+
+/* Modal (separate window) */
+.ps-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.ps-modal-window {
+  width: 520px;
+  border: 1px solid var(--ps-border);
+  border-radius: 6px;
+  box-shadow: 0 12px 32px var(--ps-shadow);
+  overflow: hidden;
+}
+
+.ps-modal-titlebar {
+  height: 32px;
+  background: var(--ps-titlebar);
+  color: var(--ps-titlebar-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+}
+
+.ps-modal-title { font-size: 13px; }
+
+.ps-modal-close {
+  width: 40px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--ps-titlebar-text);
+  font-size: 18px;
+  cursor: default;
+}
+.ps-modal-close:hover { background: #e81123; }
+
+.ps-modal-body {
+  background: #2a2b2f;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 14px;
+  min-height: 120px;
+}

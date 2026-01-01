@@ -1,27 +1,47 @@
+import ComfortCharactersCard from "./ComfortCharctersCard";
+import "./ComfortCharacters.css"
+const ComfortCharacters = () =>{
+  return (
+  <>
+  <div className="cards-container">
+  <ComfortCharactersCard 
+   character = "title "
+   show = "show"/>
+   <ComfortCharactersCard 
+   character = "title "
+   show = "show"/>
+   <ComfortCharactersCard 
+   character = "title "
+   show = "show"/>
+   <ComfortCharactersCard 
+   character = "title "
+   show = "show"/>
+   <ComfortCharactersCard 
+   character = "title "
+   show = "show"/>
+   <ComfortCharactersCard 
+   character = "title "
+   show = "show"/>
+   <ComfortCharactersCard 
+   character = "title "
+   show = "show"/>
+   <ComfortCharactersCard 
+   character = "title "
+   show = "show"/>
+   <ComfortCharactersCard 
+   character = "title "
+   show = "show"/>
+   <ComfortCharactersCard 
+   character = "title "
+   show = "show"/>
+   <ComfortCharactersCard 
+   character = "title "
+   show = "show"/>
+   </div>
+   </>
+   
+  );
+  }
 
-import './ComforCharacters.css';
 
-type CharacterComponents = {
-  character: string;
-  show : string;
-
-}
-
-const comfortcharacters = ({character, show} : CharacterComponents) => {
-    return (
-    <>
-    
-<div className="card">
-  <div className="card-border-top">
-  </div>
-  <div className="img">
-  </div>
-  <span> {character}</span>
-  <p className="show"> {show}</p>
-  
-</div>
-    </>
-    );
-}
-
-export default comfortcharacters;
+export default ComfortCharacters;

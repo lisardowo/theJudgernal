@@ -23,7 +23,15 @@
  padding-top: 10px;
  font-size: 16px;
 }
-
+.card p {
+ font-weight: 480;
+ 
+ color: white;
+ margin-left: 5%;
+ display: block;
+ padding-top: 10px;
+ font-size: 16px;
+}
 .card .job {
  font-weight: 400;
  color: white;

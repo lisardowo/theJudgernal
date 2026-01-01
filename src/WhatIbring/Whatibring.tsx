@@ -1,21 +1,18 @@
-import '../clippy.tsx'
-import TuxRenderer from '../clippy.tsx';
-import './Whatibring.css'
-import ComfortCharacters from './ComfortCharacters.tsx';
+import React from 'react';
+import './Whatibring.css';
+import PowerShellWindow from './PowerShellWindow';
+import TuxRenderer from '../clippy';
 
-const WhatIbring = () => {
-    return(
+const WhatIbring: React.FC = () => {
+   
+
+    return (
         <>
-        
-        <TuxRenderer/>
-        <div className = "cards-container">
-            <ComfortCharacters
-            character = ""
-            show = ""
-            />
-            </div>
+            
+            <PowerShellWindow />
+            <TuxRenderer />
         </>
     );
-}
+};
 
-export default WhatIbring; 
+export default WhatIbring;

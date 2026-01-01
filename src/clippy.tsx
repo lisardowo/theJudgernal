@@ -8,7 +8,8 @@ const thumbnails = [
     'computers be like "this shit true asf" and its the number 1', 
     "im not a UI developer", 
     'I use arch btw',
-    'An empty string'
+    'An empty string',
+    'I believe in substance abuse as a personality trait'
 ];
 
 

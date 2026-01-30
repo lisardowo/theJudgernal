@@ -1,11 +1,24 @@
 import './Container.css';
-import Snake from './SnakeRenderer';
+import type { ReactNode } from 'react';
 
-const Container = () => {
+interface ContainerProps {
+    title?: string;
+    children: ReactNode;
+    className?: string;
+}
+
+const Container = ({ title, children, className = '' }: ContainerProps) => {
     return(
-        <div id='container'>
-            <div id = 'snake'><Snake/></div>
-                <div id = 'Projects'></div>
+        <div className={`container ${className}`}>
+            <div className="outer dark">
+                <div className="dot red"></div>
+                <div className="dot amber"></div>
+                <div className="dot green"></div>
+                {title && <span className="container-title">{title}</span>}
+            </div>
+            <div className="container-content">
+                {children}
+            </div>
         </div>
     );
 }

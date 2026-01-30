@@ -1,7 +1,11 @@
+.snake {
+    margin-top: 8%;
+    width: 100%;
+    overflow: hidden;
+}
 
-.snake{
-     margin-top: 5%;
-     width: 50%;
-     margin-left: auto;
-     margin-right: auto;
+.snake img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }

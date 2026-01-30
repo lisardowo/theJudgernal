@@ -4,7 +4,7 @@ import Home from './Home.tsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import WhatIbring from './WhatIbring/Whatibring.tsx';
 import Buttons from './88x31.tsx';
-import Projects from './Projects.tsx';
+import Projects from './Projects/Projects.tsx';
 
 function App() {
   

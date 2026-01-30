@@ -1,7 +1,7 @@
 
 import './projects.css';
-import TuxRenderer from './clippy';
-import Snake from './SnakeRenderer';
+import TuxRenderer from '../clippy';
+import Container from './Container.tsx';
 
 const debugArray = ['123', '123'];
 
@@ -17,7 +17,7 @@ const Projects = () => {
 return (
 <>
      
-    <Snake/>
+    <Container/>
     
     <TuxRenderer/>
 </>

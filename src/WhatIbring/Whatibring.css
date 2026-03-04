@@ -14,11 +14,13 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
+    overflow: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    margin-bottom:6% ;
 }
 
 /* Navbar */
@@ -123,6 +125,7 @@ body {
 .webring-controls span {
     margin-right: 8px;
 }
+
 #debugText{
     z-index: 20;
     background-color: white;

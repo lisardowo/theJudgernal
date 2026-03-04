@@ -1,0 +1,255 @@
+/* ===== XP WINDOW OVERLAY ===== */
+.xp-window-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background: transparent;
+    pointer-events: none;
+}
+
+/* ===== MAIN WINDOW CHROME ===== */
+.xp-window {
+    pointer-events: all;
+    width: 560px;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+
+    /* XP 3-D raised border */
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #003C74;
+    border-bottom: 2px solid #003C74;
+    outline: 1px solid #0A246A;
+    border-radius: 8px 8px 0 0;
+
+    box-shadow:
+        4px 4px 16px rgba(0, 0, 0, 0.6),
+        inset 1px 1px 0 rgba(255, 255, 255, 0.4);
+
+    /* Window background */
+    background: #ECE9D8;
+    overflow: hidden;
+    font-family: 'Tahoma', 'Arial', sans-serif;
+}
+
+/* ===== TITLE BAR ===== */
+.xp-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 6px 4px 8px;
+    border-radius: 6px 6px 0 0;
+
+    /* Luna blue gradient */
+    background: linear-gradient(
+        to bottom,
+        #5484C4 0%,
+        #2E68BB 8%,
+        #1F5EBB 40%,
+        #1551B5 60%,
+        #1250AE 70%,
+        #0D47A1 80%,
+        #0A3D9B 100%
+    );
+
+    height: 30px;
+    min-height: 30px;
+    user-select: none;
+}
+
+.xp-titlebar-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
+.xp-titlebar-icon {
+    font-size: 14px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.xp-titlebar-title {
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===== WINDOW CONTROL BUTTONS ===== */
+.xp-window-controls {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.xp-ctrl-btn {
+    width: 21px;
+    height: 21px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 0;
+    line-height: 1;
+
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.4) inset,
+        0 -1px 0 rgba(0,0,0,0.2) inset;
+    transition: filter 0.1s;
+}
+
+.xp-ctrl-btn:hover {
+    filter: brightness(1.15);
+}
+.xp-ctrl-btn:active {
+    filter: brightness(0.9);
+    box-shadow: none;
+}
+
+.xp-min {
+    background: linear-gradient(to bottom, #6EA3FF 0%, #3A78D0 50%, #2760C0 100%);
+    color: #FFFFFF;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.xp-max {
+    background: linear-gradient(to bottom, #6EA3FF 0%, #3A78D0 50%, #2760C0 100%);
+    color: #FFFFFF;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.xp-close {
+    background: linear-gradient(to bottom, #EF7070 0%, #D93427 50%, #C42B20 100%);
+    color: #FFFFFF;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+/* ===== MENU BAR ===== */
+.xp-menubar {
+    display: flex;
+    align-items: center;
+    background: #ECE9D8;
+    border-bottom: 1px solid #ACA899;
+    padding: 2px 4px;
+    gap: 0;
+}
+
+.xp-menu-item {
+    padding: 2px 8px;
+    font-size: 12px;
+    color: #000000;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.xp-menu-item:hover {
+    background: #316AC5;
+    color: #FFFFFF;
+}
+
+/* ===== TOOLBAR ===== */
+.xp-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    background: linear-gradient(to bottom, #F5F4EF, #E8E5D6);
+    border-bottom: 2px solid #ACA899;
+}
+
+.xp-toolbar-btn {
+    padding: 3px 12px;
+    font-family: 'Tahoma', 'Arial', sans-serif;
+    font-size: 11px;
+    color: #000000;
+    cursor: pointer;
+    border-radius: 3px;
+
+    background: linear-gradient(to bottom, #FEFEFE, #DEDAD0);
+    border-top: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #807C72;
+    border-bottom: 1px solid #807C72;
+
+    transition: filter 0.1s;
+}
+
+.xp-toolbar-btn:hover:not(:disabled) {
+    background: linear-gradient(to bottom, #EEF4FF, #C8DCFF);
+    border-color: #316AC5;
+}
+
+.xp-toolbar-btn:active:not(:disabled) {
+    background: linear-gradient(to bottom, #DEDAD0, #FEFEFE);
+}
+
+.xp-toolbar-btn:disabled {
+    color: #ACA899;
+    cursor: default;
+}
+
+.xp-post-counter {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    color: #4B4B4B;
+    font-family: 'Tahoma', 'Arial', sans-serif;
+}
+
+/* ===== CONTENT AREA ===== */
+.xp-content {
+    flex: 1;
+    padding: 12px 14px;
+    background: #FFFFFF;
+    border: 2px inset #ACA899;
+    margin: 4px 4px 0 4px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+}
+
+/* XP scroll bar feel (approximate) */
+.xp-content::-webkit-scrollbar {
+    width: 16px;
+}
+.xp-content::-webkit-scrollbar-track {
+    background: #ECE9D8;
+}
+.xp-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #CECECE, #ABABAB);
+    border: 1px solid #888;
+}
+
+/* ===== STATUS BAR ===== */
+.xp-statusbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ECE9D8;
+    border-top: 1px solid #ACA899;
+    padding: 2px 6px;
+    margin-top: 4px;
+}
+
+.xp-statusbar-panel {
+    font-size: 10px;
+    color: #4B4B4B;
+    font-family: 'Tahoma', 'Arial', sans-serif;
+    padding: 1px 4px;
+    border: 1px inset #ACA899;
+}

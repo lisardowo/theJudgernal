@@ -1,4 +1,4 @@
-import ComfortCharactersCard from "./ComfortCharctersCard";
+import ComfortCharactersCard from "./Card";
 import "./ComfortCharacters.css"
 const ComfortCharacters = () =>{
   return (

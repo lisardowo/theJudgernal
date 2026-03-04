@@ -187,3 +187,9 @@
   padding: 14px;
   min-height: 120px;
 }
+
+.ps-comfort-container {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}

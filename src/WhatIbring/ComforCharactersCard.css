@@ -51,14 +51,8 @@
 }
 
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px; /* Espacio entre tarjetas */
-  margin-top: 40px;
+
+  
 }
 
-.cards-container .card {
-  flex: 0 1 190px; /* Mantiene el ancho de la tarjeta */
-}
 

@@ -46,8 +46,8 @@ const Projects = () => {
                     <Snake />
                 </Container>
 
-                {/* Contenedor con todos los proyectos */}
-                <Container title="My projects">
+                
+                <Container title="Projects">
                     {projectsData.map((project, index) => (
                         <ProjectWindow
                             key={index}

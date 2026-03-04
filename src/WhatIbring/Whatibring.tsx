@@ -1,6 +1,6 @@
 import React from 'react';
 import './Whatibring.css';
-import PowerShellWindow from './PowerShellWindow';
+import PowerShell from './PowerShell.tsx';
 import TuxRenderer from '../clippy';
 
 const WhatIbring: React.FC = () => {
@@ -9,7 +9,7 @@ const WhatIbring: React.FC = () => {
     return (
         <>
             
-            <PowerShellWindow />
+            <PowerShell />
             <TuxRenderer />
         </>
     );

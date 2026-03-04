@@ -14,7 +14,9 @@ const ProjectWindow = ({ title, description, repoLink, tags }: ProjectWindowProp
             <p className="project-description">{description}</p>
             
             {tags && tags.length > 0 && (
+                
                 <div className="project-tags">
+                    
                     {tags.map((tag, index) => (
                         <span key={index} className="project-tag">{tag}</span>
                     ))}

@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import ReactDOM from 'react-dom';
-import './PowerShellWindow.css';
+import './PowerShell.css';
 import ComfortCharacters from './ComfortCharacters';
-import Aboutme from './aboutme';
 
-export type PowerShellWindowProps = {
+export type PowerShellProps = {
   title?: string;
   lines?: string[];
   statusText?: string;
@@ -22,7 +20,7 @@ const defaultLines: string[] = [
   'Type <<Help>> to see some commands !         07.03.07'
 ];
 
-const PowerShellWindow: React.FC<PowerShellWindowProps> = ({
+const PowerShell: React.FC<PowerShellProps> = ({
   title = 'Windows PowerShell',
   lines = defaultLines,
   statusText = 'C:\\System\\pxgn\\v1.0\\terminal.pxgn',
@@ -34,11 +32,7 @@ const PowerShellWindow: React.FC<PowerShellWindowProps> = ({
   const [inputValue, setInputValue] = useState<string>('');
   const [history, setHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState<number>(-1);
-
-  // Modal state (separate window)
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [modalTitle, setModalTitle] = useState<string>('Comfort Characters');
-  const [modalContent, setModalContent] = useState<React.ReactNode | null>(null);
+  const [showComfortCharacters, setShowComfortCharacters] = useState<boolean>(false);
 
   const consoleRef = useRef<HTMLDivElement | null>(null);
 
@@ -51,11 +45,16 @@ const PowerShellWindow: React.FC<PowerShellWindowProps> = ({
     if (el) el.scrollTop = el.scrollHeight;
   }, [buffer]);
 
-  const openWindow = (title: string, content: React.ReactNode) => {
-    setModalTitle(title);
-    setModalContent(content);
-    setIsModalOpen(true);
-  };
+  const LINKS = [
+    'https://thedressedmolerat.github.io/',
+    'https://88x31.nl/',
+    'https://forum.melonland.net/closed.html',
+    'https://geekring.net/',
+    'https://john.citrons.xyz/',
+    'https://zeroisanaturalnumber.party/',
+    'https://www.thegitcity.com/',
+    'https://88x31.kate.pet/',
+  ];
 
   const builtinExecute = async (command: string): Promise<string[]> => {
     const trimmed = command.trim();
@@ -69,8 +68,9 @@ const PowerShellWindow: React.FC<PowerShellWindowProps> = ({
         '  help              Show this help',
         '  cls|clear         Clear the console',
         '  echo <text>       Print text',
-        '  ls                List placeholder entries',
-        '  openwin           Open a separate window'
+        '  ls                ill add something here(idk know what)',
+        '  comchar           Show comfort characters panel below terminal',
+        '  links! [page]     links to pages I found funny :3 '
       ];
     }
 
@@ -93,15 +93,46 @@ const PowerShellWindow: React.FC<PowerShellWindowProps> = ({
       ];
     }
 
-    if (c === 'comchar') {
-      openWindow('My comfort characters', <ComfortCharacters />);
-      return ['maybe wit this u can see me as I do...'];
-    }
-     if (c === 'r') {
-      openWindow('My comfort characters', <Aboutme/>);
-      return ['maybe wit this u can see me as I do...'];
+    if (c.startsWith('comchar')) {
+      setShowComfortCharacters(true);
+      return ['maybe wit this u understand me a lil better'];
     }
 
+    if (c.startsWith('links!')) {
+      const parts = trimmed.split(/\s+/);
+      const pageArg = parts[1];
+      const pageSize = 5;
+      let page = 1;
+
+      if (pageArg) {
+        const parsed = parseInt(pageArg, 10);
+        if (!Number.isNaN(parsed) && parsed > 0) {
+          page = parsed;
+        }
+      }
+
+      const totalPages = Math.max(1, Math.ceil(LINKS.length / pageSize));
+      const startIndex = (page - 1) * pageSize;
+      const endIndex = Math.min(startIndex + pageSize, LINKS.length);
+
+      if (startIndex >= LINKS.length) {
+        return [
+          `links! ${page}: No hay más enlaces.`,
+          `Páginas disponibles: 1-${totalPages}`,
+          'Usa: links! [número_de_página]'
+        ];
+      }
+
+      const header = `Links page ${page}/${totalPages}:`;
+      const linesOut = LINKS.slice(startIndex, endIndex).map((url, idx) => {
+        const globalIndex = startIndex + idx + 1;
+        return `  [${globalIndex}] ${url}`;
+      });
+
+      linesOut.unshift(header);
+      linesOut.push('1/1');//page number for the links 5 per page
+      return linesOut;
+    }
     return [
       `${trimmed}: The term '${trimmed}' is not recognized as a valid command.`,
       'Check the spelling of the name.'
@@ -155,8 +186,6 @@ const PowerShellWindow: React.FC<PowerShellWindowProps> = ({
     }
   };
 
-  const closeModal = () => setIsModalOpen(false);
-
   return (
     <div className={['ps-window', className].filter(Boolean).join(' ')}>
       <div className="ps-titlebar">
@@ -187,20 +216,13 @@ const PowerShellWindow: React.FC<PowerShellWindowProps> = ({
         <div className="ps-status">{statusText}</div>
       </div>
 
-      {isModalOpen && ReactDOM.createPortal(
-        <div className="ps-modal-overlay" onClick={closeModal}>
-          <div className="ps-modal-window" onClick={(e) => e.stopPropagation()}>
-            <div className="ps-modal-titlebar">
-              <div className="ps-modal-title">{modalTitle}</div>
-              <button className="ps-modal-close" onClick={closeModal}>×</button>
-            </div>
-            <div className="ps-modal-body">{modalContent}</div>
-          </div>
-        </div>,
-        document.body
+      {showComfortCharacters && (
+        <div className="ps-comfort-container">
+          <ComfortCharacters />
+        </div>
       )}
     </div>
   );
 };
 
-export default PowerShellWindow;
+export default PowerShell;

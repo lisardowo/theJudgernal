@@ -2,12 +2,16 @@
 import { useState, useEffect } from 'react';
 import './Blog.css';
 import BlogReader from './BlogReader';
+import VideoReader from './VideoReader';
 import blogPosts from './blogs';
+import videoPosts from './videos';
 import TuxRenderer from '../clippy';
 
 const Blog = () => {
     const [readerOpen, setReaderOpen] = useState(false);
     const [iconSelected, setIconSelected] = useState(false);
+    const [videoReaderOpen, setVideoReaderOpen] = useState(false);
+    const [videoIconSelected, setVideoIconSelected] = useState(false);
     const [startMenuOpen, setStartMenuOpen] = useState(false);
 
     // Scope Navbar positioning to this page only
@@ -32,12 +36,13 @@ const Blog = () => {
 
     const handleDesktopClick = () => {
         setIconSelected(false);
+        setVideoIconSelected(false);
     };
 
     return (
         <div className="xp-desktop" onClick={handleDesktopClick}>
 
-            {/* Desktop icon — centered */}
+            {/* Desktop icons — centered */}
             <div className="xp-desktop-center">
                 <div
                     className={`xp-icon ${iconSelected ? 'xp-icon-selected' : ''}`}
@@ -52,6 +57,24 @@ const Blog = () => {
                 </div>
 
                 {iconSelected && (
+                    <div className="xp-tooltip">
+                        Double-click to open
+                    </div>
+                )}
+
+                <div
+                    className={`xp-icon ${videoIconSelected ? 'xp-icon-selected' : ''}`}
+                    onClick={e => { e.stopPropagation(); setVideoIconSelected(true); }}
+                    onDoubleClick={e => { e.stopPropagation(); setVideoReaderOpen(true); setVideoIconSelected(false); }}
+                    title="Double-click to open Videos"
+                >
+                    <div className="xp-icon-image">
+                        <span className="xp-icon-fallback">🎬</span>
+                    </div>
+                    <span className="xp-icon-label">Videos.exe</span>
+                </div>
+
+                {videoIconSelected && (
                     <div className="xp-tooltip">
                         Double-click to open
                     </div>
@@ -85,6 +108,13 @@ const Blog = () => {
                     </div>
                 )}
 
+                {videoReaderOpen && (
+                    <div className="xp-taskbar-app active">
+                        <span>🎬</span>
+                        <span>Videos.exe</span>
+                    </div>
+                )}
+
                 <div className="xp-taskbar-tray">
                     <span className="xp-tray-time">
                         {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -97,6 +127,14 @@ const Blog = () => {
                 <BlogReader
                     posts={blogPosts}
                     onClose={() => setReaderOpen(false)}
+                />
+            )}
+
+            {/* Video reader window */}
+            {videoReaderOpen && (
+                <VideoReader
+                    posts={videoPosts}
+                    onClose={() => setVideoReaderOpen(false)}
                 />
             )}
 

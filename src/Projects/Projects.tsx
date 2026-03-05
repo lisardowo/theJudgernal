@@ -7,31 +7,31 @@ import Snake from './SnakeRenderer.tsx';
 const projectsData = [
     {
         title: 'HABITS',
-        description: 'Aplicación para gestionar y trackear hábitos diarios.',
+        description: 'VScode extension to reduce harmful habits of the programmer.',
         repoLink: 'https://github.com/lisardowo/HABITS.git',
-        tags: ['React', 'TypeScript', 'Productivity']
+        tags: ['Vs code' , 'TypeScript', 'Health']
     },
     {
         title: 'S.T.A.R.S.',
-        description: 'Sistema de gestión y organización de tareas.',
+        description: 'DRL-routing and transmission data protocol .',
         repoLink: 'https://github.com/lisardowo/S.T.A.R.S.git',
-        tags: ['JavaScript', 'Node.js']
+        tags: ['JavaScript','Python','Machine Learning', 'Node.js']
     },
     {
         title: 'Syllabus Unifier',
-        description: 'Herramienta para unificar y organizar syllabi académicos.',
+        description: 'Tool for unifying and organizing academic syllabi.',
         repoLink: 'https://github.com/lisardowo/Syllabus-unifier.git',
         tags: ['Python', 'Education']
     },
     {
-        title: 'HTTP Server',
-        description: 'Servidor HTTP personalizado desde cero.',
-        repoLink: 'https://github.com/lisardowo/HTTPServer.git',
-        tags: ['C', 'Networking']
+        title: 'HERMES',
+        description: 'Doomsday device-hub inspired in fallout.',
+        repoLink: 'https://github.com/lisardowo/HERMES.git',
+        tags: ['C', 'Networking', 'Privacy', 'Security']
     },
     {
         title: 'Shell In C',
-        description: 'Implementación de una shell en lenguaje C.',
+        description: 'Shell implementation written in C.',
         repoLink: 'https://github.com/lisardowo/ShellInC',
         tags: ['C', 'Operating Systems']
     }

@@ -22,6 +22,17 @@
     margin: 0;
 }
 
+.blog-post-video-link {
+    color: #0A246A;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.blog-post-video-link:hover {
+    color: #3a6bc4;
+    text-decoration: underline;
+}
+
 .blog-post-timestamp {
     font-family: 'Tahoma', 'Arial', sans-serif;
     font-size: 11px;

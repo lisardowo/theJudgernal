@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './PowerShell.css';
-import ComfortCharacters from './ComfortCharacters';
 
 export type PowerShellProps = {
   title?: string;
@@ -21,7 +20,7 @@ const defaultLines: string[] = [
 ];
 
 const PowerShell: React.FC<PowerShellProps> = ({
-  title = 'Windows PowerShell',
+  title = 'Command Line',
   lines = defaultLines,
   statusText = 'C:\\System\\pxgn\\v1.0\\terminal.pxgn',
   className,
@@ -32,7 +31,6 @@ const PowerShell: React.FC<PowerShellProps> = ({
   const [inputValue, setInputValue] = useState<string>('');
   const [history, setHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState<number>(-1);
-  const [showComfortCharacters, setShowComfortCharacters] = useState<boolean>(false);
 
   const consoleRef = useRef<HTMLDivElement | null>(null);
 
@@ -44,7 +42,26 @@ const PowerShell: React.FC<PowerShellProps> = ({
     const el = consoleRef.current;
     if (el) el.scrollTop = el.scrollHeight;
   }, [buffer]);
+  const MINI_BLOGS = [
+    { date: '2026-03-4', content: 'Was talking bout anime with a frined n my mother just told me "Son.. get a job" ' },
+  ];
 
+  const daysAgo = (dateStr: string): number => {
+    const then = new Date(dateStr).getTime();
+    const now = Date.now();
+    return Math.floor((now - then) / (1000 * 60 * 60 * 24));
+  };
+
+  const facts = [
+        'I am mexican :p',
+        'I like anime',
+        'I enjoy reading, specially philosophy',
+        'I wanted to study something related to philosophy',
+        'I love japanese city pop and nu metal',
+        'I want to live an exchange program in corea',
+        'Im really into ocultism and all of that, I like making sigils',
+   
+   ];
   const LINKS = [
     'https://thedressedmolerat.github.io/',
     'https://88x31.nl/',
@@ -69,8 +86,9 @@ const PowerShell: React.FC<PowerShellProps> = ({
         '  cls|clear         Clear the console',
         '  echo <text>       Print text',
         '  ls                ill add something here(idk know what)',
-        '  comchar           Show comfort characters panel below terminal',
-        '  links! [page]     links to pages I found funny :3 '
+        '  links! [page]     links to pages I found funny :3 ',
+        '  aboutMe           random facts about me',
+        '  miniBlog [page]   small thoughts, paginated (5 per page)'
       ];
     }
 
@@ -93,9 +111,50 @@ const PowerShell: React.FC<PowerShellProps> = ({
       ];
     }
 
-    if (c.startsWith('comchar')) {
-      setShowComfortCharacters(true);
-      return ['maybe wit this u understand me a lil better'];
+    if (c === 'aboutme') {
+   
+      const randomFact = facts[Math.floor(Math.random() * facts.length)];
+      return [
+        '> heres a fact bout me:',
+        `  ${randomFact}`
+      ];
+    }
+
+    if (c === 'miniblog' || c.startsWith('miniblog ')) {
+      const parts = trimmed.split(/\s+/);
+      const pageArg = parts[1];
+      const pageSize = 5;
+      let page = 1;
+
+      if (pageArg) {
+        const parsed = parseInt(pageArg, 10);
+        if (!Number.isNaN(parsed) && parsed > 0) page = parsed;
+      }
+
+      if (MINI_BLOGS.length === 0) {
+        return ['No mini blog entries yet.'];
+      }
+
+      const totalPages = Math.max(1, Math.ceil(MINI_BLOGS.length / pageSize));
+      const startIndex = (page - 1) * pageSize;
+
+      if (startIndex >= MINI_BLOGS.length) {
+        return [
+          `miniBlog ${page}: no more entries.`,
+          `Available pages: 1-${totalPages}`,
+          'Usage: miniBlog [page]'
+        ];
+      }
+
+      const endIndex = Math.min(startIndex + pageSize, MINI_BLOGS.length);
+      const linesOut = MINI_BLOGS.slice(startIndex, endIndex).map(entry => {
+        const d = daysAgo(entry.date);
+        const label = d === 0 ? 'today' : d === 1 ? '1 day ago' : `${d} days ago`;
+        return `  ${label}: ${entry.content}`;
+      });
+
+      linesOut.unshift(`miniBlog — page ${page}/${totalPages}:`);
+      return linesOut;
     }
 
     if (c.startsWith('links!')) {
@@ -117,9 +176,9 @@ const PowerShell: React.FC<PowerShellProps> = ({
 
       if (startIndex >= LINKS.length) {
         return [
-          `links! ${page}: No hay más enlaces.`,
-          `Páginas disponibles: 1-${totalPages}`,
-          'Usa: links! [número_de_página]'
+          `links! ${page}: No more entries.`,
+          `Total Pages: 1-${totalPages}`,
+          'Usage: links! [page #]'
         ];
       }
 
@@ -216,11 +275,6 @@ const PowerShell: React.FC<PowerShellProps> = ({
         <div className="ps-status">{statusText}</div>
       </div>
 
-      {showComfortCharacters && (
-        <div className="ps-comfort-container">
-          <ComfortCharacters />
-        </div>
-      )}
     </div>
   );
 };

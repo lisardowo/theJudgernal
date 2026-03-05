@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Sigils-Regular';
-  src: url('src/assets/Sigils-Regular.ttf');
+  src: url('./assets/Sigils-Regular.ttf');
   
 }
 @font-face {
@@ -9,7 +9,7 @@
 }
 @font-face {
   font-family: 'HeavyHea';
-  src: url('./src/assets/HEAVYHEA.ttf');
+  src: url('./assets/HEAVYHEA.ttf');
 }
 html,body,  #root {
   margin: 0;

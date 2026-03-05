@@ -1,6 +1,7 @@
 
 import './Navbar.css';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 interface NavbarProps{
    thumbnail: string;
@@ -12,16 +13,16 @@ const Navbar = ({ thumbnail }: NavbarProps) =>{
             <p className="dialogue-text">{thumbnail}</p>
                 <ul className= "options-container">
                     <li className='option'>
-                        <a href='/AboutMe'>What I bring to the table  </a>
+                        <Link to='/AboutMe'>What I bring to the table  </Link>
                     </li>
                     <li className='option'>
-                       <a href='/Projects'> Uhhhm I'm a nerd </a>
+                       <Link to='/Projects'> Uhhhm I'm a nerd </Link>
                     </li>
                     <li className='option'>
-                       <a href='/Blogs'> Blogs!!</a>
+                       <Link to='/Blogs'> Blogs!!</Link>
                     </li>
                     <li className='option'>
-                       <a href='/88x31'>  88x31`s</a>
+                       <Link to='/88x31'>  88x31`s</Link>
                     </li>
                 </ul>
    </div>,

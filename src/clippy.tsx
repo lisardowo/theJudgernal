@@ -48,7 +48,7 @@ const TuxRenderer = () => {
         onMouseLeave={handleMouseLeave}
         onClick={handleClick}
       >
-        <img src="src/assets/penguinEyes.webp" alt="Tux" />
+        <img src={import.meta.env.BASE_URL + 'penguinEyes.webp'} alt="Tux" />
         {hovered && selectedThumbnail && (
           <div className="tux-tooltip">{selectedThumbnail}</div>
         )}

@@ -10,6 +10,8 @@ export type PowerShellProps = {
   onExecute?: (command: string) => string[] | Promise<string[]>;
 };
 
+const MAXBUFFER = 200;
+
 const defaultLines: string[] = [
   'pxgn terminal',
   '',
@@ -201,8 +203,10 @@ const PowerShell: React.FC<PowerShellProps> = ({
   const handleSubmit = async () => {
     const cmd = inputValue;
     const promptLine = `${prompt} ${cmd}`;
-    setBuffer(prev => [...prev, promptLine]);
-
+    setBuffer(prev => {
+      const updated = [...prev, promptLine];
+      return updated.length > MAXBUFFER ? updated.slice(-MAXBUFFER): updated;
+    });
     // track history
     if (cmd.trim()) {
       setHistory(prev => [...prev, cmd]);
@@ -222,7 +226,13 @@ const PowerShell: React.FC<PowerShellProps> = ({
       output = await builtinExecute(cmd);
     }
 
-    if (output.length) setBuffer(prev => [...prev, ...output]);
+    if (output.length){ 
+      setBuffer(prev => {
+      const updated = [...prev, ...output];
+      return updated.length > MAXBUFFER ? updated.slice(-MAXBUFFER) : updated ;
+
+    });
+}
     setInputValue('');
   };
 

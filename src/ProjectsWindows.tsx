@@ -9,7 +9,7 @@ const Windows: React.FC<WindowsProps>= ({NombreProyecto, DescripcionProyecto, Li
     return (
     <>
     <div className = "window">
-        <img className = 'img' src = 'src/assets/placeholder.png'></img>
+        <img className = 'img' src = {import.meta.env.BASE_URL + 'placeholder.png'}></img>
         <div className = "img">
             <div className="Title">
                 {NombreProyecto}

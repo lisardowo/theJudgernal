@@ -11,6 +11,9 @@
 
 .ps-window {
   width: 720px;
+  max-height: 400px ;
+  display:flex;
+  flex-direction: column;
   border: 1px solid var(--ps-border);
   border-radius: 4px;
   box-shadow: 0 10px 28px var(--ps-shadow);
@@ -68,6 +71,8 @@
 /* Frame and console */
 .ps-frame {
   border-top: 1px solid var(--ps-border);
+  flex: 1;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -81,6 +86,7 @@
   min-height: 260px;
   padding: 12px 14px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .ps-line {

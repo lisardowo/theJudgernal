@@ -10,9 +10,11 @@
     display: inline-block;
     margin: 0 100;
     width: 88px;
-    
+}
 
-
+.buttons img {
+    width: 88px;
+    height: 31px;
 }
 .text{
     color: white;

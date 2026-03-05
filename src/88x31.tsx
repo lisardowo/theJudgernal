@@ -154,6 +154,161 @@ const Buttons = () => {
                     <img src="src/assets/88x31/noweb32.gif" alt="noweb32.png"></img>
                 </a>
             </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/263gggk.gif" alt="263gggk.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/FreeSpeech.gif" alt="FreeSpeech.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/TransistorCafeButton.gif" alt="TransistorCafeButton.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/anydamn.gif" alt="anydamn.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/aseprite.png" alt="aseprite.png"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/ban_timetravel.jpg" alt="ban_timetravel.jpg"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/bestviewed.gif" alt="bestviewed.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/button-120x60-gnu-1.png" alt="button-120x60-gnu-1.png"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/button-120x60-gnu-shadow-3.png" alt="button-120x60-gnu-shadow-3.png"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/button_np.gif" alt="button_np.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/catscape-loader.gif" alt="catscape-loader.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/crushcapitalism.png" alt="crushcapitalism.png"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/emacs.gif" alt="emacs.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/gothtml.png" alt="gothtml.png"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/hackerpowered.gif" alt="hackerpowered.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/idreaminhtml.gif" alt="idreaminhtml.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/machine_kills_fascists.jpg" alt="machine_kills_fascists.jpg"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/madeon_linux.gif" alt="madeon_linux.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/masto.gif" alt="masto.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/microsoft_inhaler.gif" alt="microsoft_inhaler.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/nb_noproblem.jpg" alt="nb_noproblem.jpg"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/netno.gif" alt="netno.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/no_fkn_thanks.gif" alt="no_fkn_thanks.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/nowar.png" alt="nowar.png"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/portal_alt.jpg" alt="portal_alt.jpg"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/pride.gif" alt="pride.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/proxmox.gif" alt="proxmox.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/public-domain.png" alt="public-domain.png"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/thevoid.gif" alt="thevoid.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/visitmini.gif" alt="visitmini.gif"></img>
+                </a>
+            </div>
+            <div className="buttons">
+                <a href="">
+                    <img src="src/assets/88x31/vscodium100.gif" alt="vscodium100.gif"></img>
+                </a>
+            </div>
         
         </div>
         

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Navbar from './Navbar';
 import  ReactDOM  from 'react-dom';
 
+
 const thumbnails = [
     'computers be like "this shit true asf" and its the number 1', 
     "im not a UI developer", 
@@ -49,6 +50,11 @@ const TuxRenderer = () => {
         onClick={handleClick}
       >
         <img src={import.meta.env.BASE_URL + 'penguinEyes.webp'} alt="Tux" />
+        {!hovered && (
+          <div className="tux-indicator">
+            <button type="button" onClick={(e) => { e.stopPropagation(); handleClick(); }}>▼</button>
+          </div>
+        )}
         {hovered && selectedThumbnail && (
           <div className="tux-tooltip">{selectedThumbnail}</div>
         )}

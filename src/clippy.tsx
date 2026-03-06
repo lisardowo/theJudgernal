@@ -10,7 +10,7 @@ const thumbnails = [
     "im not a UI developer", 
     'I use arch btw',
     'An empty string',
-    'I believe in substance abuse as a personality trait'
+    //'I believe in substance abuse as a personality trait'
 ];
 
 
